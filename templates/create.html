@@ -1,0 +1,38 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Todos</h1>
+
+
+
+<form >
+  <label for="title">Title</label><br>
+  <input type="text" id="title" name="title" value="  "><br>
+  <label for="Description">Description</label><br>
+  <textarea rows = '10' cols = '30'></textarea>
+</form>
+<form>
+<p>Country</p>
+
+
+  <select id="country" name="country">
+    <option value="np">Nepal</option>
+    <option value="au">Australia</option>
+    <option value="ca">Canada</option>
+    <option value="dhoti">India</option>
+    <option value="ru">Russia</option>
+    <option value="ch">China</option>
+    <option value="jp">japan</option>
+    <option value="bhag">bangladesh</option>
+    <option value="usa">USA</option>
+  </select>
+</form>
+<br>
+
+
+<button type="submit" name= "submit">save</button>
+<button type="cancel" name= "cancel">Cancel</button>
+</div>
+<br>
+{% endblock %}
