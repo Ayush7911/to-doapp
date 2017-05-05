@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{app_title}}</title>
+    <title>Todo App</title>
 
     {% load static %}
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -24,13 +23,15 @@
     <div class="container">
         <div class="header clearfix">
             <nav>
+            
                 <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a></li>
-                    <li role="presentation"><a href="#">About</a></li>
-                    <li role="presentation"><a href="#">Contact</a></li>
+                    
+                    <li role="presentation" class="active"><a href="{% url 'index' %}">Home</a></li>
+                    <li role="presentation"><a href="{% url 'about' %}">About</a></li>
+                    <li role="presentation"><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
             </nav>
-            <h3 class="text-muted">{{app_title}}</h3>
+            <h3 class="text-muted">Todo App</h3>
         </div>
 
     <section id="content">
@@ -39,7 +40,7 @@
 
             <!-- content -->
 
-            
+
         {% endblock %}
     </section>
         

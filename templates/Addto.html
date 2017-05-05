@@ -1,0 +1,25 @@
+<h1> Todo list</h1>
+<ul class = "list-group-item">
+	{% for item in items %}
+	<li class = "list-group-item" ><input type="checkbox" {% if item.completed == True %}
+		checked
+		{% endif %}
+		>
+		{{ item.title}}
+
+		<!-- yesko css style.css ma xa -->
+	
+		<a href=""><span class = "glyphicon glyphicon-remove">remove</span></a>
+		<a href=""><span class= "glyphicon glyphicon-pencil"> edit<span></a>
+		
+		
+	
+</li>
+
+	{% endfor %}
+	
+	
+</ul>
+
+
+	

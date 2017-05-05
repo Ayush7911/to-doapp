@@ -1,38 +1,43 @@
-
-
 {% extends 'base.html' %}
+
+<!-- yo todoapp button click gare paxi ko ho  -->
 {% block content %}
-  <h1>Todos</h1>
+	<button class = "btn btn-lg btn-success"><h3>Todos</h3></button><br><hr>
 
 
+<a href=""></a>
+<h4>
+<form class ="form-horizontal">
+  <div class = "form-group"></div>
+  <label for="title" >Title</label>
+  <input class = "form-control" type="text" id="title" name="title" placeholder="title of your todos"><br>
+  <label for="Description">Description</label>
+  <textarea class="form-control" rows="3" id = "Description" placeholder="I will be doing this and that"></textarea>
+</form><br>
 
-<form >
-  <label for="title">Title</label><br>
-  <input type="text" id="title" name="title" value="  "><br>
-  <label for="Description">Description</label><br>
-  <textarea rows = '10' cols = '30'></textarea>
-</form>
-<form>
-<p>Country</p>
+
+<form class ="form-horizontal ">
+<p><b>Day</b></p>
 
 
-  <select id="country" name="country">
-    <option value="np">Nepal</option>
-    <option value="au">Australia</option>
-    <option value="ca">Canada</option>
-    <option value="dhoti">India</option>
-    <option value="ru">Russia</option>
-    <option value="ch">China</option>
-    <option value="jp">japan</option>
-    <option value="bhag">bangladesh</option>
-    <option value="usa">USA</option>
+  <select id="day" name="day">
+    
+    <option value="Sunday">Sunday</option>
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
+  </div>
+    
   </select>
-</form>
-<br>
+</form><br>
 
 
-<button type="submit" name= "submit">save</button>
-<button type="cancel" name= "cancel">Cancel</button>
-</div>
+<input class = "btn btn-success" type="submit" value= "submit">
+<button class = "btn btn-danger" type="cancel" name= "cancel">Cancel</button>
 <br>
+
+</h4>
 {% endblock %}
