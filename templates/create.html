@@ -7,16 +7,15 @@
 
 <a href=""></a>
 <h4>
-<form class ="form-horizontal">
+<form class ="form-horizontal" action="{% url 'save' %}" method="post">
   <div class = "form-group"></div>
+  {% csrf_token %}
   <label for="title" >Title</label>
   <input class = "form-control" type="text" id="title" name="title" placeholder="title of your todos"><br>
   <label for="Description">Description</label>
-  <textarea class="form-control" rows="3" id = "Description" placeholder="I will be doing this and that"></textarea>
-</form><br>
+  <textarea class="form-control" rows="3" id = "Description" name="description" placeholder="I will be doing this and that"></textarea>
+<br>
 
-
-<form class ="form-horizontal ">
 <p><b>Day</b></p>
 
 
@@ -32,12 +31,12 @@
   </div>
     
   </select>
-</form><br>
+  <br>
 
 
 <input class = "btn btn-success" type="submit" value= "submit">
 <button class = "btn btn-danger" type="cancel" name= "cancel">Cancel</button>
-<br>
+</form><br>
 
 </h4>
 {% endblock %}

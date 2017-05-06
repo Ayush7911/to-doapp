@@ -1,12 +1,36 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.utils import timezone
+from todos.models import Todo
 
+
+	
+# Create your views here.
 def index(request):
-	context ={
-		'app_title':'TodoApp'
-	}
-	return render(request, 'index.html', context)
+	
+	items = Todo.objects.all()
+	
+	return render(request, 'index.html', {'items': items})
 
 def create(request):
-	return render(request,'create.html')
+	return render(request, 'create.html')
+	
+def contact(request):
+	return render(request, 'contact.html')
 
+def about(request):
+	return render(request, 'about.html')
+
+def save(request):
+    # Get the form data from the request.
+    title = request.POST.get('title')
+    description = request.POST.get('description')
+
+    # Create a new todo item with the data.
+    Todo.objects.create(
+        title=title,
+        description=description,
+        created_at=timezone.now()
+    )
+
+    # Redirect back to index page
+    return redirect('index')
