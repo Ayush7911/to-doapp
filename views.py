@@ -34,3 +34,7 @@ def save(request):
 
     # Redirect back to index page
     return redirect('index')
+
+def edit(request, id):
+	print('Received Id =' +str(id))
+	return render(request, 'create.html')

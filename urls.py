@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^contact$', views.contact, name= "contact"),
     url(r'^about$', views.about, name= "about"),
     url(r'^save$', views.save, name='save'),
+    url(r'^edit/todos/(\d+)/$', views.edit, name='edit'),
     ]
 
