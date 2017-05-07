@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Todo App</title>
+    <title>{{app_title}}</title>
 
     {% load static %}
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -31,7 +31,7 @@
                     <li role="presentation"><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
             </nav>
-            <h3 class="text-muted">Todo App</h3>
+            <h3 class="text-muted">{{app_title}}</h3>
         </div>
 
     <section id="content">
@@ -55,6 +55,7 @@
 
     </div>
     <!-- /container -->
+    <script src="{% static 'todos/js/todos.js' %}"></script>
 </body>
 
 </html>

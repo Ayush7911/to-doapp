@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% include 'message.html' %}
         <div class="jumbotron">
             <h1>{{app_title}}</h1>
             <p class="lead">Just a demo todo app we're trying to create.</p>
@@ -7,7 +8,7 @@
                 <a class="btn btn-lg btn-success" href="{% url 'create' %}" role="button">Add TODO</a>
             </p>
         </div>
-
         {% include 'Addto.html' %}
+        
 
  {% endblock %}       

@@ -94,3 +94,9 @@ li:hover a{
 .text-warning-yellow{
   color: #9f9f12;
 }
+
+/* yo responsive image ko lagi */
+.responsive{
+  width: 100%;
+  
+}

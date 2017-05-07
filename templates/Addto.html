@@ -9,8 +9,10 @@
 
 		<!-- yesko css style.css ma xa -->
 	
-		<a href=""><span class = "glyphicon glyphicon-remove">remove</span></a>
-		<a href=""><span class= "glyphicon glyphicon-pencil"> edit<span></a>
+		
+		<a href="{% url 'remove' item.id %}"><span class = "glyphicon glyphicon-remove">remove</span></a>
+	
+		<a href="{% url 'edit' item.id %}"><span class= "glyphicon glyphicon-pencil"> edit<span></a>
 		
 		
 	

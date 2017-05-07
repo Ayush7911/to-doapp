@@ -2,19 +2,47 @@
 
 <!-- yo todoapp button click gare paxi ko ho  -->
 {% block content %}
-	<button class = "btn btn-lg btn-success"><h3>Todos</h3></button><br><hr>
+    <h3>
+      {% if form_type == 'create' %}
+        Add Todo
+      {% elif form_type == 'edit' %}
+        Edit Todo
+      {% else %}
+      {% endif %}
+    </h3>
+{% include 'message.html' %}
+  <br>
+  <hr>
 
 
 <a href=""></a>
 <h4>
-<form class ="form-horizontal" action="{% url 'save' %}" method="post">
-  <div class = "form-group"></div>
+<form class ="form-horizontal create-form" method="POST" action="{% url 'save' %}">
+  <input type="hidden" name="id" value="{{todo.id}}" />
+  <input type="hidden" name="form_type" value="{{form_type}}" />
   {% csrf_token %}
+  <div class = "form-group"></div>
   <label for="title" >Title</label>
-  <input class = "form-control" type="text" id="title" name="title" placeholder="title of your todos"><br>
+  <input 
+  id="input-todo-title"
+  class = "form-control" type="text"  
+  name="title"  
+  placeholder="title of your todos"
+  value={% if todo.title is not none %}{{todo.title}}{% endif %}>
+
+  <br>
   <label for="Description">Description</label>
-  <textarea class="form-control" rows="3" id = "Description" name="description" placeholder="I will be doing this and that"></textarea>
+  <textarea 
+  class="form-control" 
+  rows="3"  
+  name="description" 
+  value={% if todo.description is not none %}{{todo.description}}{% endif %} 
+  placeholder="I will be doing this and that"></textarea>
 <br>
+  <!--completed:<br> <input type="radio" name = 'gender' value ='t' checked>True<br>
+  <input type="radio" name ='gender'value ='f'>False -->
+
+
 
 <p><b>Day</b></p>
 
@@ -31,12 +59,12 @@
   </div>
     
   </select>
-  <br>
+<br>
 
 
-<input class = "btn btn-success" type="submit" value= "submit">
+<button class = "btn btn-success" type="submit" >save</button>
 <button class = "btn btn-danger" type="cancel" name= "cancel">Cancel</button>
-</form><br>
-
+<br>
 </h4>
+</form>
 {% endblock %}
